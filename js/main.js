@@ -1,3 +1,4 @@
+// HEADER 
 const searchEl = document.querySelector('.search');
 const searchInputEl = searchEl.querySelector('input');
 
@@ -12,7 +13,7 @@ searchInputEl.addEventListener('blur',function(){
     searchEl.classList.remove('focused');
     searchInputEl.setAttribute('placeholder', '');
 })
-
+// HEADER - BADGE
 const badgeEl = document.querySelector('header .badges');
 
 window.addEventListener('scroll', _.throttle(function(){
@@ -28,3 +29,11 @@ window.addEventListener('scroll', _.throttle(function(){
         }) 
     }
 },300));
+// VISUAL
+const fadeEls = document.querySelectorAll('.visual .fade-in')
+fadeEls.forEach(function(fadeEl, index){
+    gsap.to(fadeEl, 1, {
+        delay: (index +1 ) * .7,
+        opacity: 1
+    });
+});
